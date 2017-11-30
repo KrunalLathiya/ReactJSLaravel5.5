@@ -12,7 +12,7 @@ class EditItem extends Component {
   }
 
   componentDidMount(){
-    axios.get(`http://localhost:8000/items/${this.props.params.id}/edit`)
+    axios.get(`/items/${this.props.params.id}/edit`)
     .then(response => {
       this.setState({ name: response.data.name, price: response.data.price });
     })
@@ -37,7 +37,7 @@ class EditItem extends Component {
       name: this.state.name,
       price: this.state.price
     }
-    let uri = 'http://localhost:8000/items/'+this.props.params.id;
+    let uri = '/items/'+this.props.params.id;
     axios.patch(uri, products).then((response) => {
           this.props.history.push('/display-item');
     });

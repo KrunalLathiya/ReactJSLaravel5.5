@@ -26,7 +26,7 @@ class CreateItem extends Component {
       name: this.state.productName,
       price: this.state.productPrice
     }
-    let uri = 'http://localhost:8000/items';
+    let uri = '/items';
     axios.post(uri, products).then((response) => {
       browserHistory.push('/display-item');
     });
