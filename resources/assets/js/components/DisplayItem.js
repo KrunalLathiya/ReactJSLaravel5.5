@@ -9,7 +9,7 @@ class DisplayItem extends Component {
        this.state = {value: '', items: ''};
      }
      componentDidMount(){
-       axios.get('http://localhost:8000/items')
+       axios.get('/items')
        .then(response => {
          this.setState({ items: response.data });
        })
